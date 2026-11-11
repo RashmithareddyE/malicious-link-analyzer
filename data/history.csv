@@ -1,0 +1,6 @@
+timestamp,url,final_score,risk_category,ml_prediction,rule_score,ml_score,indicator_count,source
+2026-11-11 13:11:26,https://lt.wikipedia.org,0,LOW RISK,SAFE,0,0.0,0,qr_upload
+2026-11-11 13:15:20,https://www.example.com/about,0,LOW RISK,SAFE,0,0.0,0,manual
+2026-11-11 13:15:24,https://www.example.com/about,0,LOW RISK,SAFE,0,0.0,0,manual
+2026-11-11 13:15:28,https://www.example.com/about,0,LOW RISK,SAFE,0,0.0,0,manual
+2026-11-11 13:15:29,https://www.example.com/about,0,LOW RISK,SAFE,0,0.0,0,manual

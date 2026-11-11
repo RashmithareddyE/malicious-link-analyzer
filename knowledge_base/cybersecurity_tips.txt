@@ -1,0 +1,25 @@
+Cybersecurity best practices: how to stay safe online
+
+Before you click or scan
+
+Pause when a message or QR code creates urgency, fear or excitement. Check the full destination address before opening it. Do not open links from unknown senders. Confirm unexpected requests through a separate trusted channel, such as calling the number on the back of your bank card.
+
+Passwords and accounts
+
+Use a long unique password for every account and store them in a reputable password manager. Turn on multi-factor authentication, preferably with an authenticator app or hardware key. Never share OTPs, PINs or recovery codes with anyone, including people who claim to be from your bank or a support team. A genuine organisation will never ask for your password.
+
+Devices and software
+
+Keep your operating system, browser and apps updated. Install apps only from official stores. Do not install software or open files that you downloaded from a link you do not trust. Use reputable security software and enable built-in browser protection such as safe browsing warnings.
+
+Recognising a suspicious website
+
+Check that the domain matches the real brand exactly. Be cautious of pages that ask for far more information than needed. Look for poor design, spelling mistakes and missing legal or contact pages. Remember that a padlock only means the connection is encrypted, not that the site is honest. Never enter card details on pages reached from an unsolicited message.
+
+If you think you were targeted
+
+Do not click further. Do not reply. Report the message to your email provider, your bank or the impersonated company. If you shared credentials, change passwords immediately and enable multi-factor authentication. Monitor bank statements for unauthorised activity and inform your bank if money may be at risk.
+
+Interpreting an automated risk result
+
+A low risk score means no strong warning signs were found in the address text. It does not guarantee safety, because new or cleverly disguised attack sites can look normal. A medium or high score means the link shows warning signs and should not be opened or used for logins or payments until you have verified it independently.

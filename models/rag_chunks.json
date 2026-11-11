@@ -1,0 +1,182 @@
+[
+ {
+  "source": "cybersecurity_tips.txt",
+  "heading": "Before you click or scan",
+  "text": "Before you click or scan. Pause when a message or QR code creates urgency, fear or excitement. Check the full destination address before opening it. Do not open links from unknown senders. Confirm unexpected requests through a separate trusted channel, such as calling the number on the back of your bank card.",
+  "id": 0
+ },
+ {
+  "source": "cybersecurity_tips.txt",
+  "heading": "Passwords and accounts",
+  "text": "Passwords and accounts. Use a long unique password for every account and store them in a reputable password manager. Turn on multi-factor authentication, preferably with an authenticator app or hardware key. Never share OTPs, PINs or recovery codes with anyone, including people who claim to be from your bank or a support team. A genuine organisation will never ask for your password.",
+  "id": 1
+ },
+ {
+  "source": "cybersecurity_tips.txt",
+  "heading": "Devices and software",
+  "text": "Devices and software. Keep your operating system, browser and apps updated. Install apps only from official stores. Do not install software or open files that you downloaded from a link you do not trust. Use reputable security software and enable built-in browser protection such as safe browsing warnings.",
+  "id": 2
+ },
+ {
+  "source": "cybersecurity_tips.txt",
+  "heading": "Recognising a suspicious website",
+  "text": "Recognising a suspicious website. Check that the domain matches the real brand exactly. Be cautious of pages that ask for far more information than needed. Look for poor design, spelling mistakes and missing legal or contact pages. Remember that a padlock only means the connection is encrypted, not that the site is honest. Never enter card details on pages reached from an unsolicited message.",
+  "id": 3
+ },
+ {
+  "source": "cybersecurity_tips.txt",
+  "heading": "If you think you were targeted",
+  "text": "If you think you were targeted. Do not click further. Do not reply. Report the message to your email provider, your bank or the impersonated company. If you shared credentials, change passwords immediately and enable multi-factor authentication. Monitor bank statements for unauthorised activity and inform your bank if money may be at risk.",
+  "id": 4
+ },
+ {
+  "source": "cybersecurity_tips.txt",
+  "heading": "Interpreting an automated risk result",
+  "text": "Interpreting an automated risk result. A low risk score means no strong warning signs were found in the address text. It does not guarantee safety, because new or cleverly disguised attack sites can look normal. A medium or high score means the link shows warning signs and should not be opened or used for logins or payments until you have verified it independently.",
+  "id": 5
+ },
+ {
+  "source": "malicious_urls.txt",
+  "heading": "",
+  "text": "What is a malicious URL? A malicious URL is a web address that leads to a harmful destination. The destination might be a phishing page that steals credentials, a page that silently downloads malware, a scam shop, a fake tech-support page, or a site that exploits browser weaknesses. Malicious URLs are spread through email, messages, social media, advertising and QR codes.",
+  "id": 6
+ },
+ {
+  "source": "malicious_urls.txt",
+  "heading": "Indicators that a URL may be malicious",
+  "text": "Indicators that a URL may be malicious. An IP address instead of a domain name, such as http://203.0.113.5/login, is unusual because real services use domain names. A very long URL can hide the real destination. The @ symbol is dangerous because browsers ignore everything before it in the address, so http://trusted.com@attacker.example actually goes to attacker.example. A URL shortener hides the final destination until the link is opened. Many dots or several subdomain levels can disguise the real domain, because the true domain is always the part just before the domain ending.",
+  "id": 7
+ },
+ {
+  "source": "malicious_urls.txt",
+  "heading": "Indicators that a URL may be malicious",
+  "text": "Indicators that a URL may be malicious. disguise the real domain, because the true domain is always the part just before the domain ending. Multiple hyphens in a domain, such as secure-login-update-account.example, are typical of throw-away phishing domains. Unusual port numbers such as :8080 are rarely used by public consumer websites. Links to files ending in .exe, .apk, .scr, .bat or .zip can install malware. Redirect parameters such as redirect= or url= inside a link can send the visitor to a different site than the one displayed. Words like login, verify, secure, update, bank and password are used by attackers to look official.",
+  "id": 8
+ },
+ {
+  "source": "malicious_urls.txt",
+  "heading": "Domains that are frequently abused",
+  "text": "Domains that are frequently abused. Some low-cost domain endings such as .xyz, .top, .tk and .click are used far more often for disposable attack sites than established endings, although many legitimate sites also use them. The ending alone never proves that a site is malicious.",
+  "id": 9
+ },
+ {
+  "source": "malicious_urls.txt",
+  "heading": "What happens when a malicious URL is visited",
+  "text": "What happens when a malicious URL is visited. The page may show a fake login form, request personal data, trigger an automatic download, show fake virus warnings, or try to get permission to send browser notifications. Simply opening a link can reveal your IP address and browser details to the attacker, so unknown links should not be opened casually.",
+  "id": 10
+ },
+ {
+  "source": "malicious_urls.txt",
+  "heading": "Limits of automated detection",
+  "text": "Limits of automated detection. Automated URL analysis looks at patterns in the address text. A brand-new phishing site with a clean-looking address can be missed, and a legitimate site with an unusual address can be flagged. A low risk result is therefore not a guarantee of safety.",
+  "id": 11
+ },
+ {
+  "source": "phishing.txt",
+  "heading": "",
+  "text": "What is phishing? Phishing is a social-engineering attack in which a criminal pretends to be a trusted organisation or person in order to trick a victim into revealing sensitive information such as passwords, banking details, one-time passwords (OTPs) or card numbers, or into installing malware. Phishing messages usually arrive by email, SMS (smishing), phone call (vishing), social media or, increasingly, QR codes (quishing).",
+  "id": 12
+ },
+ {
+  "source": "phishing.txt",
+  "heading": "How phishing works",
+  "text": "How phishing works. An attacker builds a fake login page or payment page that copies the look of a real brand. The victim receives a message that creates urgency or fear, for example \"your account will be suspended\" or \"unusual sign-in detected\", and is asked to click a link. The fake page captures whatever the victim types and sends it to the attacker, who then uses the stolen credentials to take over accounts or steal money.",
+  "id": 13
+ },
+ {
+  "source": "phishing.txt",
+  "heading": "Common types of phishing",
+  "text": "Common types of phishing. Deceptive phishing imitates a well-known company at large scale. Spear phishing targets one person using personal details. Whaling targets senior executives. Clone phishing copies a real earlier email but swaps the link for a malicious one. Smishing uses text messages, vishing uses voice calls, and quishing hides the malicious link inside a QR code.",
+  "id": 14
+ },
+ {
+  "source": "phishing.txt",
+  "heading": "Warning signs of a phishing message or page",
+  "text": "Warning signs of a phishing message or page. Messages that create panic or a tight deadline. Requests for passwords, OTPs, PINs or card details. Generic greetings instead of your real name. Spelling and grammar mistakes. Sender addresses that look similar to, but are not exactly, the real company domain. Links whose real destination differs from the text shown. Login pages reached through a link instead of through the official app or a bookmark you saved yourself.",
+  "id": 15
+ },
+ {
+  "source": "phishing.txt",
+  "heading": "What to do if you entered details on a phishing page",
+  "text": "What to do if you entered details on a phishing page. Change the password of the affected account immediately from a trusted device and anywhere else the same password was used. Enable multi-factor authentication. Contact your bank at once if card or banking details were entered. Report the phishing page to the impersonated brand and to your national cyber-crime reporting service.",
+  "id": 16
+ },
+ {
+  "source": "qr_phishing.txt",
+  "heading": "",
+  "text": "What is QR code phishing (quishing)? QR code phishing, also called quishing, is a phishing attack where the malicious link is encoded inside a QR code instead of being written as text. A QR code is just a picture that stores text, most often a web address. People cannot read the address by looking at the picture, so they cannot judge whether the destination is safe before scanning.",
+  "id": 17
+ },
+ {
+  "source": "qr_phishing.txt",
+  "heading": "How QR code phishing works",
+  "text": "How QR code phishing works. Attackers print or send QR codes that appear to lead to a legitimate service, for example a parking payment, a restaurant menu, a package delivery notice, a bank verification request or a multi-factor authentication reset. When the victim scans the code with a phone, the camera app shows or opens a link to a fake website. The fake website asks for login details, payment card numbers or personal information, or tries to make the victim install a malicious app.",
+  "id": 18
+ },
+ {
+  "source": "qr_phishing.txt",
+  "heading": "Why QR codes are attractive to attackers",
+  "text": "Why QR codes are attractive to attackers. Email security filters often scan text links but cannot read links hidden inside images. QR codes are scanned on personal phones, which usually have fewer security controls than office computers. People trust QR codes because they are common and convenient. Physical stickers pasted over a genuine QR code on a poster, parking meter or restaurant table are hard to notice.",
+  "id": 19
+ },
+ {
+  "source": "qr_phishing.txt",
+  "heading": "How to scan QR codes safely",
+  "text": "How to scan QR codes safely. Preview the full URL before opening it and check that the domain is exactly what you expect. Be careful with QR codes in unexpected emails or messages and with stickers placed over other codes. Do not enter passwords or payment details on a page opened from a QR code unless you are sure of the domain. Prefer official apps and typed or bookmarked addresses for banking and account services. Treat QR codes that demand urgent action as suspicious. Use a scanner that shows the decoded link without opening it automatically, which is exactly what this project does.",
+  "id": 20
+ },
+ {
+  "source": "qr_phishing.txt",
+  "heading": "QR codes and payments",
+  "text": "QR codes and payments. Never scan a QR code to receive money. In genuine payment apps you scan a code to pay, and a stranger asking you to scan a code to collect a refund or prize is a common fraud pattern.",
+  "id": 21
+ },
+ {
+  "source": "url_spoofing.txt",
+  "heading": "URL spoofing and domain spoofing",
+  "text": "URL spoofing and domain spoofing. URL spoofing means making a malicious web address look like a trusted one. Domain spoofing is the most common form: the attacker registers a domain that closely resembles a real brand so that victims believe they are on the genuine site.",
+  "id": 22
+ },
+ {
+  "source": "url_spoofing.txt",
+  "heading": "Typosquatting and look-alike domains",
+  "text": "Typosquatting and look-alike domains. Typosquatting uses a small spelling change, such as paypa1.com with the digit 1 instead of the letter l, gooogle.com with an extra letter, or arnazon.com where \"rn\" imitates \"m\". Brand names combined with extra words, such as paypal-secure-login.com or amazon-support-help.net, are also not owned by the real brand even though they contain its name.",
+  "id": 23
+ },
+ {
+  "source": "url_spoofing.txt",
+  "heading": "Subdomain tricks",
+  "text": "Subdomain tricks. Only the part directly before the domain ending identifies the owner of a site. In https://paypal.com.secure-check.example the real domain is secure-check.example and paypal.com is just a subdomain label chosen by the attacker. Reading the address from right to left, starting at the first single slash, shows the true domain.",
+  "id": 24
+ },
+ {
+  "source": "url_spoofing.txt",
+  "heading": "Homograph attacks and punycode",
+  "text": "Homograph attacks and punycode. Internationalised domain names allow letters from other alphabets. Some look identical to Latin letters, for example the Cyrillic letter that resembles Latin a. Browsers encode such names in punycode, which starts with xn--. A domain beginning with xn-- deserves extra caution when the page claims to be a well-known brand.",
+  "id": 25
+ },
+ {
+  "source": "url_spoofing.txt",
+  "heading": "The @ trick and embedded credentials",
+  "text": "The @ trick and embedded credentials. In an address such as https://www.bank.com@attacker.example the text before the @ is treated as a username. The browser connects to attacker.example, not to bank.com.",
+  "id": 26
+ },
+ {
+  "source": "url_spoofing.txt",
+  "heading": "URL shorteners and redirects",
+  "text": "URL shorteners and redirects. Shortened links and open redirects hide the final destination. Before trusting them, expand the link with a safe preview service or ask the sender to share the full address.",
+  "id": 27
+ },
+ {
+  "source": "url_spoofing.txt",
+  "heading": "HTTPS and spoofing",
+  "text": "HTTPS and spoofing. HTTPS encrypts the connection between your browser and the site and shows that the site has a certificate for its own domain name. It does not prove that the site is trustworthy. Attackers can obtain free HTTPS certificates for their look-alike domains, so a padlock icon on a phishing page is common. HTTP without the S means traffic is not encrypted and can be read or modified by others on the network, so never enter passwords on HTTP pages.",
+  "id": 28
+ },
+ {
+  "source": "url_spoofing.txt",
+  "heading": "How to verify a domain",
+  "text": "How to verify a domain. Read the domain slowly, letter by letter. Compare it with the address printed on an official card, statement or the brand's official app. Type the address yourself or use a bookmark. When in doubt, search for the company name and use the official result.",
+  "id": 29
+ }
+]

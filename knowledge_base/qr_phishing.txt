@@ -1,0 +1,19 @@
+What is QR code phishing (quishing)?
+
+QR code phishing, also called quishing, is a phishing attack where the malicious link is encoded inside a QR code instead of being written as text. A QR code is just a picture that stores text, most often a web address. People cannot read the address by looking at the picture, so they cannot judge whether the destination is safe before scanning.
+
+How QR code phishing works
+
+Attackers print or send QR codes that appear to lead to a legitimate service, for example a parking payment, a restaurant menu, a package delivery notice, a bank verification request or a multi-factor authentication reset. When the victim scans the code with a phone, the camera app shows or opens a link to a fake website. The fake website asks for login details, payment card numbers or personal information, or tries to make the victim install a malicious app.
+
+Why QR codes are attractive to attackers
+
+Email security filters often scan text links but cannot read links hidden inside images. QR codes are scanned on personal phones, which usually have fewer security controls than office computers. People trust QR codes because they are common and convenient. Physical stickers pasted over a genuine QR code on a poster, parking meter or restaurant table are hard to notice.
+
+How to scan QR codes safely
+
+Preview the full URL before opening it and check that the domain is exactly what you expect. Be careful with QR codes in unexpected emails or messages and with stickers placed over other codes. Do not enter passwords or payment details on a page opened from a QR code unless you are sure of the domain. Prefer official apps and typed or bookmarked addresses for banking and account services. Treat QR codes that demand urgent action as suspicious. Use a scanner that shows the decoded link without opening it automatically, which is exactly what this project does.
+
+QR codes and payments
+
+Never scan a QR code to receive money. In genuine payment apps you scan a code to pay, and a stranger asking you to scan a code to collect a refund or prize is a common fraud pattern.

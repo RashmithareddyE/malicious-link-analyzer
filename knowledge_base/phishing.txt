@@ -1,0 +1,19 @@
+What is phishing?
+
+Phishing is a social-engineering attack in which a criminal pretends to be a trusted organisation or person in order to trick a victim into revealing sensitive information such as passwords, banking details, one-time passwords (OTPs) or card numbers, or into installing malware. Phishing messages usually arrive by email, SMS (smishing), phone call (vishing), social media or, increasingly, QR codes (quishing).
+
+How phishing works
+
+An attacker builds a fake login page or payment page that copies the look of a real brand. The victim receives a message that creates urgency or fear, for example "your account will be suspended" or "unusual sign-in detected", and is asked to click a link. The fake page captures whatever the victim types and sends it to the attacker, who then uses the stolen credentials to take over accounts or steal money.
+
+Common types of phishing
+
+Deceptive phishing imitates a well-known company at large scale. Spear phishing targets one person using personal details. Whaling targets senior executives. Clone phishing copies a real earlier email but swaps the link for a malicious one. Smishing uses text messages, vishing uses voice calls, and quishing hides the malicious link inside a QR code.
+
+Warning signs of a phishing message or page
+
+Messages that create panic or a tight deadline. Requests for passwords, OTPs, PINs or card details. Generic greetings instead of your real name. Spelling and grammar mistakes. Sender addresses that look similar to, but are not exactly, the real company domain. Links whose real destination differs from the text shown. Login pages reached through a link instead of through the official app or a bookmark you saved yourself.
+
+What to do if you entered details on a phishing page
+
+Change the password of the affected account immediately from a trusted device and anywhere else the same password was used. Enable multi-factor authentication. Contact your bank at once if card or banking details were entered. Report the phishing page to the impersonated brand and to your national cyber-crime reporting service.

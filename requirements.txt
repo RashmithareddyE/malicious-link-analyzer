@@ -1,0 +1,16 @@
+# Malicious Link Analyzer - tested with Python 3.10 - 3.12 (Windows / Linux / macOS)
+# Version ranges are used so pip can pick wheels that exist for your Python version.
+streamlit>=1.36,<2
+pillow>=10.3,<13
+opencv-python-headless>=4.9,<6
+pyzbar>=0.1.9,<0.2          # optional at runtime: OpenCV is used if ZBar is missing
+numpy>=1.26,<3
+pandas>=2.1,<4
+scikit-learn>=1.4,<2
+joblib>=1.3,<2
+faiss-cpu>=1.8,<2
+sentence-transformers>=2.7,<6   # downloads all-MiniLM-L6-v2 (~90 MB) on first run
+matplotlib>=3.8,<4
+plotly>=5.20,<8
+qrcode>=7.4,<9                  # only for generate_sample_qr.py
+pytest>=8,<10                   # only for the tests

@@ -1,0 +1,19 @@
+What is a malicious URL?
+
+A malicious URL is a web address that leads to a harmful destination. The destination might be a phishing page that steals credentials, a page that silently downloads malware, a scam shop, a fake tech-support page, or a site that exploits browser weaknesses. Malicious URLs are spread through email, messages, social media, advertising and QR codes.
+
+Indicators that a URL may be malicious
+
+An IP address instead of a domain name, such as http://203.0.113.5/login, is unusual because real services use domain names. A very long URL can hide the real destination. The @ symbol is dangerous because browsers ignore everything before it in the address, so http://trusted.com@attacker.example actually goes to attacker.example. A URL shortener hides the final destination until the link is opened. Many dots or several subdomain levels can disguise the real domain, because the true domain is always the part just before the domain ending. Multiple hyphens in a domain, such as secure-login-update-account.example, are typical of throw-away phishing domains. Unusual port numbers such as :8080 are rarely used by public consumer websites. Links to files ending in .exe, .apk, .scr, .bat or .zip can install malware. Redirect parameters such as redirect= or url= inside a link can send the visitor to a different site than the one displayed. Words like login, verify, secure, update, bank and password are used by attackers to look official.
+
+Domains that are frequently abused
+
+Some low-cost domain endings such as .xyz, .top, .tk and .click are used far more often for disposable attack sites than established endings, although many legitimate sites also use them. The ending alone never proves that a site is malicious.
+
+What happens when a malicious URL is visited
+
+The page may show a fake login form, request personal data, trigger an automatic download, show fake virus warnings, or try to get permission to send browser notifications. Simply opening a link can reveal your IP address and browser details to the attacker, so unknown links should not be opened casually.
+
+Limits of automated detection
+
+Automated URL analysis looks at patterns in the address text. A brand-new phishing site with a clean-looking address can be missed, and a legitimate site with an unusual address can be flagged. A low risk result is therefore not a guarantee of safety.

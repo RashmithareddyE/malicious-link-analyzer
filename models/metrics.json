@@ -1,0 +1,75 @@
+{
+  "accuracy": 1.0,
+  "precision_weighted": 1.0,
+  "recall_weighted": 1.0,
+  "f1_weighted": 1.0,
+  "per_class": {
+    "SAFE": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 120
+    },
+    "SUSPICIOUS": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 120
+    },
+    "MALICIOUS": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 120
+    }
+  },
+  "confusion_matrix": [
+    [
+      120,
+      0,
+      0
+    ],
+    [
+      0,
+      120,
+      0
+    ],
+    [
+      0,
+      0,
+      120
+    ]
+  ],
+  "labels": [
+    "SAFE",
+    "SUSPICIOUS",
+    "MALICIOUS"
+  ],
+  "n_train": 1440,
+  "n_test": 360,
+  "feature_importance": {
+    "url_length": 0.1655,
+    "num_suspicious_keywords": 0.1284,
+    "path_length": 0.1043,
+    "domain_length": 0.0983,
+    "num_digits": 0.0945,
+    "num_dots": 0.0697,
+    "num_subdomains": 0.0594,
+    "digit_ratio": 0.0585,
+    "num_special_chars": 0.0547,
+    "num_query_params": 0.0449,
+    "suspicious_tld": 0.0338,
+    "hyphens_in_domain": 0.0257,
+    "num_hyphens": 0.0239,
+    "is_shortener": 0.0102,
+    "has_at_symbol": 0.0091,
+    "has_punycode": 0.007,
+    "has_https": 0.0061,
+    "has_ip": 0.0033,
+    "unusual_port": 0.0027
+  },
+  "dataset_sources": [
+    "synthetic_demo"
+  ],
+  "disclaimer": "Metrics are measured on the dataset used for training/testing. If the source is 'synthetic_demo' they only demonstrate the pipeline and are NOT real-world detection accuracy."
+}

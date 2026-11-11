@@ -1,0 +1,837 @@
+/* Malicious Link Analyzer - refreshed UI: charcoal, teal, cyan and subtle purple.
+   Class names used by app.py (hero, card, badge, bar, ind, note, warn, src, c-*) are unchanged. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root{
+  --bg:#121316; --bg2:#16181d; --panel:#1c1f26; --panel2:#232730; --line:#2e333d; --line2:#3a404c;
+  --text:#e6e8ec; --muted:#9aa1ad;
+  --teal:#14b8a6; --cyan:#22d3ee; --purple:#8b5cf6; --blue:#38bdf8;
+  --green:#22c55e; --orange:#f59e0b; --red:#ef4444;
+  --radius:16px; --shadow:0 8px 24px rgba(0,0,0,.35); --shadow-sm:0 2px 8px rgba(0,0,0,.28);
+}
+html, body, .stApp, [class*="css"]{font-family:'Inter','Segoe UI',system-ui,-apple-system,sans-serif;}
+.stApp{
+  background:
+    radial-gradient(900px 480px at 8% -8%, rgba(20,184,166,.13), transparent 60%),
+    radial-gradient(800px 420px at 95% -5%, rgba(139,92,246,.12), transparent 60%),
+    var(--bg);
+}
+
+/* ---- layout: no sidebar, centred content, tidy chrome ---- */
+[data-testid="stSidebar"], [data-testid="stSidebarCollapsedControl"], [data-testid="collapsedControl"]{display:none !important;}
+header[data-testid="stHeader"]{background:transparent;}
+#MainMenu, footer{visibility:hidden;}
+.block-container{max-width:1280px;padding-top:2.2rem;padding-bottom:3rem;}
+h1,h2,h3,h4{letter-spacing:-.01em;color:var(--text);}
+h2{font-weight:700;margin-top:.4rem}
+hr{border-color:var(--line) !important;}
+
+/* ---- top navigation bar ---- */
+div[data-testid="stHorizontalBlock"]:has(div[data-testid="stRadio"]){
+  align-items:center;gap:1rem;background:rgba(28,31,38,.92);backdrop-filter:blur(8px);
+  border:1px solid var(--line);border-radius:18px;padding:10px 16px;box-shadow:var(--shadow);
+  margin-bottom:1.1rem;
+}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-logo{flex:0 0 42px;display:grid;place-items:center;width:42px;height:42px;border-radius:12px;font-size:1.3rem;
+  background:linear-gradient(135deg,var(--teal),var(--purple));box-shadow:0 4px 14px rgba(20,184,166,.35)}
+.brand-name{font-weight:800;font-size:1.05rem;color:var(--text);line-height:1.1}
+.brand-sub{font-size:.7rem;color:var(--muted);line-height:1.25}
+/* Works with both the newer (stRadioOption) and older (baseweb) Streamlit radio markup */
+div[data-testid="stRadio"] [role="radiogroup"]{gap:4px;flex-wrap:wrap;justify-content:flex-end;}
+div[data-testid="stRadio"] label[data-testid="stRadioOption"],
+div[data-testid="stRadio"] label[data-baseweb="radio"]{
+  margin:0;padding:8px 11px;border-radius:12px;border:1px solid transparent;cursor:pointer;
+  background:transparent;transition:all .18s ease;
+}
+/* hide the round radio dot */
+div[data-testid="stRadio"] label[data-testid="stRadioOption"] > div > div:not([data-testid="stMarkdownContainer"]),
+div[data-testid="stRadio"] label[data-baseweb="radio"] > div:first-child{display:none !important;}
+div[data-testid="stRadio"] label p{font-size:.83rem;font-weight:600;color:var(--muted);margin:0;white-space:nowrap}
+div[data-testid="stRadio"] label[data-testid="stRadioOption"]:hover,
+div[data-testid="stRadio"] label[data-baseweb="radio"]:hover{background:var(--panel2);border-color:var(--line2);}
+div[data-testid="stRadio"] label:hover p{color:var(--text)}
+/* selected tab */
+div[data-testid="stRadio"] label[data-testid="stRadioOption"][data-selected="true"],
+div[data-testid="stRadio"] label[data-baseweb="radio"]:has(input:checked){
+  background:linear-gradient(135deg,rgba(20,184,166,.30),rgba(139,92,246,.26));
+  border-color:rgba(34,211,238,.6);box-shadow:0 0 0 1px rgba(34,211,238,.12) inset,var(--shadow-sm);
+}
+div[data-testid="stRadio"] label[data-testid="stRadioOption"][data-selected="true"] p,
+div[data-testid="stRadio"] label[data-baseweb="radio"]:has(input:checked) p{color:#fff}
+
+@media (min-width:1300px){div[data-testid="stRadio"] [role="radiogroup"]{flex-wrap:nowrap}}
+
+/* ---- header / hero ---- */
+.hero{position:relative;overflow:hidden;padding:30px 34px;margin-bottom:22px;border-radius:20px;
+  border:1px solid var(--line);box-shadow:var(--shadow);
+  background:
+    radial-gradient(520px 220px at 100% 0%, rgba(139,92,246,.30), transparent 70%),
+    radial-gradient(520px 240px at 0% 100%, rgba(20,184,166,.28), transparent 70%),
+    linear-gradient(135deg,#1d2129,#171a20);}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;
+  background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+  background-size:34px 34px;mask-image:linear-gradient(120deg,transparent 30%,#000 100%);
+  -webkit-mask-image:linear-gradient(120deg,transparent 30%,#000 100%);}
+.hero-text{position:relative;z-index:1}
+.hero h1{margin:0;font-size:2.15rem;font-weight:800;line-height:1.15;
+  background:linear-gradient(90deg,#5eead4,#22d3ee 45%,#a78bfa);-webkit-background-clip:text;
+  background-clip:text;-webkit-text-fill-color:transparent;}
+.hero h1 .emo{display:inline-block;-webkit-text-fill-color:initial;background:none;}
+.hero p{margin:.55rem 0 0;color:#b7bdc8;font-size:1.02rem;max-width:880px}
+.chips{position:relative;z-index:1;margin-top:16px;display:flex;gap:8px;flex-wrap:wrap}
+.chip{display:inline-block;padding:6px 14px;border-radius:999px;font-size:.8rem;font-weight:500;color:#d6f5f0;
+  background:rgba(20,184,166,.14);border:1px solid rgba(20,184,166,.45)}
+
+/* ---- metric / info cards ---- */
+.card{background:linear-gradient(180deg,var(--panel),#191c22);border:1px solid var(--line);border-radius:var(--radius);
+  padding:18px 20px;height:100%;box-shadow:var(--shadow-sm);transition:transform .15s ease,border-color .15s ease}
+.card:hover{transform:translateY(-2px);border-color:var(--line2)}
+.card .label{color:var(--muted);font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.09em}
+.card .value{font-size:clamp(1.15rem,1.9vw,1.9rem);font-weight:800;line-height:1.25;margin-top:2px;word-break:keep-all;overflow-wrap:normal}
+.card .sub{color:var(--muted);font-size:.78rem}
+.c-cyan{color:var(--cyan)}.c-green{color:var(--green)}.c-orange{color:var(--orange)}.c-red{color:var(--red)}.c-blue{color:var(--teal)}
+[data-testid="stMetric"]{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;box-shadow:var(--shadow-sm)}
+[data-testid="stMetricLabel"] p{color:var(--muted);font-weight:600}
+[data-testid="stMetricValue"]{color:var(--cyan);font-weight:800}
+
+/* ---- risk badge + progress bar ---- */
+.badge{display:inline-block;padding:7px 18px;border-radius:999px;font-weight:800;letter-spacing:.07em;border:1px solid;font-size:.9rem}
+.badge.low{color:var(--green);border-color:var(--green);background:rgba(34,197,94,.12)}
+.badge.medium{color:var(--orange);border-color:var(--orange);background:rgba(245,158,11,.12)}
+.badge.high{color:var(--red);border-color:var(--red);background:rgba(239,68,68,.13)}
+.bar{height:12px;border-radius:999px;background:#2a2f39;overflow:hidden;margin:10px 0 14px}
+.bar>span{display:block;height:100%;border-radius:999px;box-shadow:0 0 12px rgba(255,255,255,.12)}
+
+/* ---- indicators + notices ---- */
+.ind{border:1px solid var(--line);border-left:4px solid var(--orange);background:var(--panel);padding:12px 16px;border-radius:12px;margin:9px 0;box-shadow:var(--shadow-sm)}
+.ind.high{border-left-color:var(--red)}.ind.medium{border-left-color:var(--orange)}.ind.low{border-left-color:var(--teal)}
+.ind b{color:var(--text)}.ind span{color:var(--muted);font-size:.9rem}
+.note{border:1px solid rgba(20,184,166,.4);background:linear-gradient(90deg,rgba(20,184,166,.12),rgba(139,92,246,.07));
+  padding:13px 16px;border-radius:12px;color:#d3dae3;font-size:.92rem;margin-bottom:.6rem}
+.warn{border:1px solid rgba(245,158,11,.45);background:rgba(245,158,11,.09);padding:13px 16px;border-radius:12px;
+  color:#fde7b0;font-size:.9rem;margin:.6rem 0}
+.src{color:var(--muted);font-size:.8rem}
+
+/* ---- buttons ---- */
+.stButton>button, .stDownloadButton>button{border-radius:12px;font-weight:600;padding:.55rem 1.15rem;
+  background:var(--panel2);color:var(--text);border:1px solid var(--line2);transition:all .15s ease;box-shadow:var(--shadow-sm)}
+.stButton>button:hover, .stDownloadButton>button:hover{border-color:var(--cyan);color:#fff;transform:translateY(-1px)}
+.stButton>button[kind="primary"]{background:linear-gradient(135deg,var(--teal),#7c6df0);border:none;color:#fff;
+  box-shadow:0 6px 18px rgba(20,184,166,.28)}
+.stButton>button[kind="primary"]:hover{filter:brightness(1.08);box-shadow:0 8px 22px rgba(139,92,246,.35)}
+.stButton>button:disabled{opacity:.45}
+
+/* ---- inputs ---- */
+[data-baseweb="input"], [data-baseweb="select"] > div, [data-baseweb="textarea"]{
+  background:var(--panel) !important;border-radius:12px !important;border:1px solid var(--line2) !important}
+[data-baseweb="input"]:focus-within, [data-baseweb="select"] > div:focus-within{
+  border-color:var(--cyan) !important;box-shadow:0 0 0 3px rgba(34,211,238,.15) !important}
+input{color:var(--text) !important}
+label p, [data-testid="stWidgetLabel"] p{color:#c3c9d3;font-weight:600;font-size:.9rem}
+
+/* ---- upload section ---- */
+[data-testid="stFileUploader"] section, [data-testid="stFileUploaderDropzone"]{
+  background:linear-gradient(180deg,rgba(20,184,166,.07),rgba(139,92,246,.05));
+  border:2px dashed rgba(34,211,238,.45);border-radius:18px;padding:26px;transition:all .18s ease}
+[data-testid="stFileUploaderDropzone"]:hover{border-color:var(--cyan);background:rgba(20,184,166,.11)}
+[data-testid="stFileUploaderDropzone"] button{border-radius:10px}
+
+/* ---- tabs (role-based selectors work across Streamlit versions) ---- */
+[role="tablist"]{gap:6px;background:var(--panel);padding:6px;border-radius:14px;border:1px solid var(--line);flex-wrap:wrap}
+[role="tab"]{border-radius:10px;padding:8px 14px;color:var(--muted);font-weight:600;height:auto;border:1px solid transparent;cursor:pointer}
+[role="tab"] p{color:inherit;margin:0;font-weight:600;font-size:.88rem}
+[role="tab"]:hover{color:var(--text);background:var(--panel2)}
+[role="tab"][aria-selected="true"]{background:linear-gradient(135deg,rgba(20,184,166,.30),rgba(139,92,246,.24));
+  color:#fff;border-color:rgba(34,211,238,.5)}
+[data-baseweb="tab-highlight"], [data-baseweb="tab-border"], .react-aria-SelectionIndicator{display:none !important}
+
+/* ---- alerts, expanders, code, tables, charts ---- */
+[data-testid="stAlert"]{border-radius:12px;border:1px solid var(--line2)}
+[data-testid="stExpander"]{border:1px solid var(--line) !important;border-radius:14px;background:var(--panel)}
+[data-testid="stCode"], pre{border-radius:12px !important;border:1px solid var(--line)}
+[data-testid="stDataFrame"]{border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-sm)}
+[data-testid="stPlotlyChart"], [data-testid="stImage"] img{border-radius:14px}
+[data-testid="stPlotlyChart"]{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:6px;box-shadow:var(--shadow-sm)}
+[data-testid="stImage"] img{border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+
+/* ---- responsive ---- */
+@media (max-width:1100px){
+  div[data-testid="stRadio"] [role="radiogroup"]{justify-content:flex-start}
+  div[data-testid="stRadio"] label[data-testid="stRadioOption"],div[data-testid="stRadio"] label[data-baseweb="radio"]{padding:8px 10px}
+}
+@media (max-width:800px){
+  .block-container{padding-left:1rem;padding-right:1rem}
+  .hero{padding:22px 20px}.hero h1{font-size:1.5rem}
+}
+
+/* ==========================================
+   LIGHT PROFESSIONAL THEME
+   Malicious Link Analyzer
+   ========================================== */
+
+/* Main application background */
+.stApp {
+    background: #F1F5F9 !important;
+    color: #1E293B !important;
+}
+
+/* Main content area */
+[data-testid="stAppViewContainer"] {
+    background: #F1F5F9 !important;
+}
+
+/* Header */
+[data-testid="stHeader"] {
+    background: #FFFFFF !important;
+}
+
+/* Main headings and text */
+h1, h2, h3, h4, h5 {
+    color: #172554 !important;
+    font-weight: 700 !important;
+}
+
+p, label, span, div {
+    color: inherit;
+}
+
+/* Main text */
+.stMarkdown p {
+    color: #334155;
+}
+
+/* Top navigation and custom navigation containers */
+.navbar, .top-nav, .navigation, [class*="navbar"] {
+    background: #FFFFFF !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 14px !important;
+    box-shadow: 0 3px 12px rgba(15, 23, 42, 0.06) !important;
+}
+
+/* Navigation links */
+.navbar a, .top-nav a, .navigation a {
+    color: #334155 !important;
+    font-weight: 600 !important;
+}
+
+/* Buttons */
+.stButton > button,
+.stDownloadButton > button {
+    background: #2563EB !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    border-radius: 9px !important;
+    padding: 9px 18px !important;
+    font-weight: 600 !important;
+    transition: 0.2s ease-in-out;
+}
+
+.stButton > button:hover,
+.stDownloadButton > button:hover {
+    background: #1D4ED8 !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+/* Input fields */
+.stTextInput input,
+.stTextArea textarea,
+.stNumberInput input {
+    background: #FFFFFF !important;
+    color: #1E293B !important;
+    border: 1px solid #CBD5E1 !important;
+    border-radius: 9px !important;
+}
+
+/* Select boxes */
+.stSelectbox div[data-baseweb="select"] {
+    background: #FFFFFF !important;
+    border-radius: 9px !important;
+}
+
+/* Upload section */
+[data-testid="stFileUploader"] {
+    background: #FFFFFF !important;
+    border: 1px dashed #60A5FA !important;
+    border-radius: 12px !important;
+    padding: 12px !important;
+}
+
+/* Cards and metric containers */
+[data-testid="stMetric"],
+[data-testid="stVerticalBlockBorderWrapper"] {
+    background: #FFFFFF !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 12px !important;
+    padding: 12px !important;
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
+}
+
+/* Information messages */
+[data-testid="stAlert"] {
+    background: #EFF6FF !important;
+    border: 1px solid #BFDBFE !important;
+    border-radius: 10px !important;
+}
+
+/* Tables */
+[data-testid="stDataFrame"],
+[data-testid="stTable"] {
+    background: #FFFFFF !important;
+    border-radius: 10px !important;
+}
+
+/* Tabs */
+.stTabs [data-baseweb="tab-list"] {
+    background: #FFFFFF !important;
+    border-bottom: 1px solid #E2E8F0 !important;
+}
+
+.stTabs [data-baseweb="tab"] {
+    color: #475569 !important;
+}
+
+.stTabs [aria-selected="true"] {
+    color: #2563EB !important;
+    border-bottom-color: #2563EB !important;
+}
+
+/* Sidebar, if used */
+[data-testid="stSidebar"] {
+    background: #FFFFFF !important;
+    border-right: 1px solid #E2E8F0 !important;
+}
+
+/* Horizontal separators */
+hr {
+    border-color: #E2E8F0 !important;
+}
+
+/* Links */
+a {
+    color: #2563EB !important;
+}
+
+/* Footer */
+footer {
+    visibility: hidden;
+}
+
+/* Smooth appearance */
+.stApp, .stApp * {
+    transition: background-color 0.2s ease,
+                border-color 0.2s ease;
+}
+
+/* ==========================================
+   LIGHT PROFESSIONAL THEME - FINAL FIX
+   ========================================== */
+
+/* Overall background */
+.stApp,
+[data-testid="stAppViewContainer"],
+.main,
+section.main {
+    background: #F8FAFC !important;
+    color: #1E293B !important;
+}
+
+/* Main content */
+.block-container {
+    background: transparent !important;
+    color: #1E293B !important;
+}
+
+/* All headings */
+h1, h2, h3, h4, h5, h6 {
+    color: #172554 !important;
+}
+
+/* Main text */
+.stMarkdown,
+.stMarkdown p,
+.stMarkdown span,
+.stMarkdown label {
+    color: #334155 !important;
+}
+
+/* TOP NAVIGATION BAR */
+.navbar,
+.top-nav,
+.navigation,
+.nav-container,
+[class*="navbar"],
+[class*="nav-container"] {
+    background: #FFFFFF !important;
+    background-image: none !important;
+    color: #1E293B !important;
+    border: 1px solid #DCE5F0 !important;
+    border-radius: 14px !important;
+    box-shadow: 0 3px 12px rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Navigation text */
+.navbar *,
+.top-nav *,
+.navigation *,
+.nav-container *,
+[class*="navbar"] *,
+[class*="nav-container"] * {
+    color: #334155 !important;
+}
+
+/* Navigation active button */
+.navbar .active,
+.top-nav .active,
+.nav-container .active {
+    background: #DBEAFE !important;
+    color: #1D4ED8 !important;
+}
+
+/* PROJECT HEADER / HERO SECTION */
+.hero,
+.header-card,
+.project-header,
+[class*="hero"],
+[class*="header-card"],
+[class*="project-header"] {
+    background: linear-gradient(
+        135deg,
+        #FFFFFF 0%,
+        #EFF6FF 100%
+    ) !important;
+
+    background-image: linear-gradient(
+        135deg,
+        #FFFFFF 0%,
+        #EFF6FF 100%
+    ) !important;
+
+    color: #1E293B !important;
+    border: 1px solid #D8E5F5 !important;
+    border-radius: 18px !important;
+    box-shadow: 0 5px 18px rgba(15, 23, 42, 0.06) !important;
+}
+
+/* Header text */
+.hero *,
+.header-card *,
+.project-header *,
+[class*="hero"] *,
+[class*="header-card"] *,
+[class*="project-header"] * {
+    color: #1E293B !important;
+}
+
+/* Project title */
+.hero h1,
+.hero h2,
+.project-header h1,
+.project-header h2 {
+    color: #1D4ED8 !important;
+}
+
+/* Information and notice boxes */
+.stAlert,
+.notice,
+.info-box,
+[class*="info-box"] {
+    background: #EFF6FF !important;
+    background-image: none !important;
+    border: 1px solid #BFDBFE !important;
+    border-radius: 10px !important;
+    color: #1E40AF !important;
+}
+
+/* File upload section */
+[data-testid="stFileUploader"] {
+    background: #FFFFFF !important;
+    color: #1E293B !important;
+    border: 1px dashed #60A5FA !important;
+    border-radius: 12px !important;
+}
+
+/* File uploader text */
+[data-testid="stFileUploader"] * {
+    color: #334155 !important;
+}
+
+/* Text inputs */
+.stTextInput input,
+.stTextArea textarea,
+.stNumberInput input {
+    background: #FFFFFF !important;
+    color: #1E293B !important;
+    border: 1px solid #CBD5E1 !important;
+}
+
+/* Buttons */
+.stButton > button,
+.stDownloadButton > button {
+    background: #2563EB !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    border-radius: 9px !important;
+    font-weight: 600 !important;
+}
+
+/* Button hover */
+.stButton > button:hover,
+.stDownloadButton > button:hover {
+    background: #1D4ED8 !important;
+    color: #FFFFFF !important;
+}
+
+/* Cards */
+[data-testid="stMetric"],
+[data-testid="stVerticalBlockBorderWrapper"] {
+    background: #FFFFFF !important;
+    color: #1E293B !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 12px !important;
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04) !important;
+}
+
+/* Tables */
+[data-testid="stDataFrame"],
+[data-testid="stTable"] {
+    background: #FFFFFF !important;
+    color: #1E293B !important;
+}
+
+/* Tabs */
+.stTabs [data-baseweb="tab-list"] {
+    background: #FFFFFF !important;
+}
+
+.stTabs [data-baseweb="tab"] {
+    color: #334155 !important;
+}
+
+/* Links */
+a {
+    color: #2563EB !important;
+}
+
+/* Sidebar if present */
+[data-testid="stSidebar"] {
+    background: #FFFFFF !important;
+    color: #1E293B !important;
+    border-right: 1px solid #E2E8F0 !important;
+}
+
+/* ===== FIX LOW-VISIBILITY TEXT ===== */
+
+/* Force readable text throughout the application */
+.stApp,
+.stApp p,
+.stApp label,
+.stApp span,
+.stApp small,
+.stApp div {
+    color: #334155;
+}
+
+/* Upload labels */
+[data-testid="stFileUploader"] label,
+[data-testid="stFileUploader"] p,
+[data-testid="stFileUploader"] span,
+[data-testid="stFileUploader"] small {
+    color: #334155 !important;
+    opacity: 1 !important;
+}
+
+/* Upload area */
+[data-testid="stFileUploader"] section {
+    background: #FFFFFF !important;
+    border: 1px dashed #60A5FA !important;
+    opacity: 1 !important;
+}
+
+/* Upload button */
+[data-testid="stFileUploader"] button {
+    background: #FFFFFF !important;
+    color: #1D4ED8 !important;
+    border: 1px solid #93C5FD !important;
+}
+
+/* Custom HTML text */
+[data-testid="stMarkdownContainer"] p,
+[data-testid="stMarkdownContainer"] span {
+    color: #334155 !important;
+    opacity: 1 !important;
+}
+
+/* Information messages */
+[data-testid="stAlert"] p,
+[data-testid="stAlert"] span {
+    color: #1E40AF !important;
+    opacity: 1 !important;
+}
+
+/* Hero description and notice */
+.hero p,
+.hero span,
+.project-header p,
+.project-header span {
+    color: #334155 !important;
+    opacity: 1 !important;
+}
+
+/* Remove faded text */
+.stApp [style*="opacity"] {
+    opacity: 1 !important;
+}
+
+/* ==========================================
+   FINAL NAVIGATION VISIBILITY FIX
+   LIGHT PROFESSIONAL THEME
+   ========================================== */
+
+/* Top navigation container */
+div[data-testid="stHorizontalBlock"]:has(div[data-testid="stRadio"]) {
+    background: #FFFFFF !important;
+    background-image: none !important;
+    border: 1px solid #D1DDEA !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Brand name */
+.brand-name {
+    color: #172554 !important;
+    font-weight: 800 !important;
+}
+
+/* Brand subtitle */
+.brand-sub {
+    color: #64748B !important;
+}
+
+/* Brand logo */
+.brand-logo {
+    box-shadow: 0 3px 10px rgba(37, 99, 235, 0.15) !important;
+}
+
+/* Navigation options - all text visible */
+div[data-testid="stRadio"] label p {
+    color: #334155 !important;
+    font-weight: 600 !important;
+    opacity: 1 !important;
+}
+
+/* Navigation options */
+div[data-testid="stRadio"] label[data-testid="stRadioOption"],
+div[data-testid="stRadio"] label[data-baseweb="radio"] {
+    background: transparent !important;
+    border: 1px solid transparent !important;
+    border-radius: 10px !important;
+}
+
+/* Hover effect */
+div[data-testid="stRadio"] label[data-testid="stRadioOption"]:hover,
+div[data-testid="stRadio"] label[data-baseweb="radio"]:hover {
+    background: #EFF6FF !important;
+    border-color: #BFDBFE !important;
+}
+
+/* Hover text */
+div[data-testid="stRadio"] label:hover p {
+    color: #1D4ED8 !important;
+}
+
+/* Selected navigation option */
+div[data-testid="stRadio"] label[data-testid="stRadioOption"][data-selected="true"],
+div[data-testid="stRadio"] label[data-baseweb="radio"]:has(input:checked) {
+    background: #DBEAFE !important;
+    border: 1px solid #60A5FA !important;
+    box-shadow: none !important;
+}
+
+/* Selected navigation text */
+div[data-testid="stRadio"] label[data-testid="stRadioOption"][data-selected="true"] p,
+div[data-testid="stRadio"] label[data-baseweb="radio"]:has(input:checked) p {
+    color: #1D4ED8 !important;
+    font-weight: 700 !important;
+}
+
+/* Keep navigation readable on smaller screens */
+div[data-testid="stRadio"] [role="radiogroup"] {
+    gap: 5px !important;
+    justify-content: flex-end !important;
+    flex-wrap: wrap !important;
+}
+
+/* ===== PASTEL GREEN + LAVENDER + BLUE THEME ===== */
+
+.stApp,
+[data-testid="stAppViewContainer"],
+section.main {
+    background: #F2F7F5 !important;
+    color: #253858 !important;
+}
+
+/* Navigation */
+div[data-testid="stHorizontalBlock"]:has(div[data-testid="stRadio"]) {
+    background: #FFFFFF !important;
+    border: 1px solid #D8E6DF !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 14px rgba(37,56,88,.07) !important;
+}
+
+/* Navigation text */
+div[data-testid="stRadio"] label p {
+    color: #253858 !important;
+    opacity: 1 !important;
+    font-weight: 600 !important;
+}
+
+/* Selected navigation */
+div[data-testid="stRadio"] label[data-testid="stRadioOption"][data-selected="true"],
+div[data-testid="stRadio"] label[data-baseweb="radio"]:has(input:checked) {
+    background: #E6F3FF !important;
+    border: 1px solid #A9C9E8 !important;
+}
+
+div[data-testid="stRadio"] label[data-testid="stRadioOption"][data-selected="true"] p,
+div[data-testid="stRadio"] label[data-baseweb="radio"]:has(input:checked) p {
+    color: #2456A6 !important;
+}
+
+/* Brand */
+.brand-name { color: #253858 !important; }
+.brand-sub { color: #52647B !important; }
+
+/* Main header */
+.hero {
+    background: linear-gradient(120deg,#E8F5E9,#F0EAFE) !important;
+    border: 1px solid #D8E6DF !important;
+    box-shadow: 0 4px 14px rgba(37,56,88,.06) !important;
+}
+
+.hero h1 {
+    background: none !important;
+    color: #253858 !important;
+    -webkit-text-fill-color: #253858 !important;
+}
+
+.hero p { color: #334155 !important; }
+
+/* Security badge */
+.chip {
+    background: #DDF3E6 !important;
+    color: #245B42 !important;
+    border: 1px solid #A8D8BA !important;
+}
+
+/* Headings and general text */
+h1,h2,h3,h4,h5,h6 {
+    color: #253858 !important;
+}
+
+.stMarkdown p,
+.stMarkdown span,
+.stMarkdown li {
+    color: #334155 !important;
+}
+
+/* Cards */
+.card,
+[data-testid="stMetric"] {
+    background: #FFFFFF !important;
+    color: #253858 !important;
+    border: 1px solid #DCE9E2 !important;
+    border-radius: 14px !important;
+    box-shadow: 0 3px 12px rgba(37,56,88,.05) !important;
+}
+
+.card .label,
+.card .sub {
+    color: #52647B !important;
+}
+
+/* Information and warning boxes */
+.note {
+    background: #E6F3FF !important;
+    color: #253858 !important;
+    border: 1px solid #B9D8F2 !important;
+}
+
+.warn {
+    background: #FFF5E5 !important;
+    color: #854D0E !important;
+}
+
+/* Upload area */
+[data-testid="stFileUploader"],
+[data-testid="stFileUploader"] section,
+[data-testid="stFileUploaderDropzone"] {
+    background: #FFFFFF !important;
+    border: 1px dashed #9BC9B0 !important;
+    border-radius: 14px !important;
+}
+
+[data-testid="stFileUploader"] label,
+[data-testid="stFileUploader"] p,
+[data-testid="stFileUploader"] span {
+    color: #334155 !important;
+    opacity: 1 !important;
+}
+
+/* Buttons */
+.stButton > button,
+.stDownloadButton > button {
+    background: #648FBD !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    border-radius: 9px !important;
+}
+
+.stButton > button:hover,
+.stDownloadButton > button:hover {
+    background: #476F9D !important;
+    color: #FFFFFF !important;
+}
+
+/* Inputs */
+[data-baseweb="input"],
+[data-baseweb="textarea"],
+[data-baseweb="select"] > div {
+    background: #FFFFFF !important;
+    border: 1px solid #C9DCD2 !important;
+}
+
+input, textarea {
+    color: #253858 !important;
+}
+
+/* Tabs */
+[role="tablist"] {
+    background: #FFFFFF !important;
+    border: 1px solid #DCE9E2 !important;
+}
+
+[role="tab"] { color: #334155 !important; }
+
+/* Alerts */
+[data-testid="stAlert"] {
+    background: #E6F3FF !important;
+    color: #253858 !important;
+}
+
+/* Tables */
+[data-testid="stDataFrame"],
+[data-testid="stTable"] {
+    background: #FFFFFF !important;
+    border: 1px solid #DCE9E2 !important;
+}
+
+/* Indicators */
+.ind {
+    background: #FFFFFF !important;
+    color: #253858 !important;
+}
+
+.ind b { color: #253858 !important; }
+.ind span { color: #52647B !important; }

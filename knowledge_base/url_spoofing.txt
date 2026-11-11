@@ -1,0 +1,31 @@
+URL spoofing and domain spoofing
+
+URL spoofing means making a malicious web address look like a trusted one. Domain spoofing is the most common form: the attacker registers a domain that closely resembles a real brand so that victims believe they are on the genuine site.
+
+Typosquatting and look-alike domains
+
+Typosquatting uses a small spelling change, such as paypa1.com with the digit 1 instead of the letter l, gooogle.com with an extra letter, or arnazon.com where "rn" imitates "m". Brand names combined with extra words, such as paypal-secure-login.com or amazon-support-help.net, are also not owned by the real brand even though they contain its name.
+
+Subdomain tricks
+
+Only the part directly before the domain ending identifies the owner of a site. In https://paypal.com.secure-check.example the real domain is secure-check.example and paypal.com is just a subdomain label chosen by the attacker. Reading the address from right to left, starting at the first single slash, shows the true domain.
+
+Homograph attacks and punycode
+
+Internationalised domain names allow letters from other alphabets. Some look identical to Latin letters, for example the Cyrillic letter that resembles Latin a. Browsers encode such names in punycode, which starts with xn--. A domain beginning with xn-- deserves extra caution when the page claims to be a well-known brand.
+
+The @ trick and embedded credentials
+
+In an address such as https://www.bank.com@attacker.example the text before the @ is treated as a username. The browser connects to attacker.example, not to bank.com.
+
+URL shorteners and redirects
+
+Shortened links and open redirects hide the final destination. Before trusting them, expand the link with a safe preview service or ask the sender to share the full address.
+
+HTTPS and spoofing
+
+HTTPS encrypts the connection between your browser and the site and shows that the site has a certificate for its own domain name. It does not prove that the site is trustworthy. Attackers can obtain free HTTPS certificates for their look-alike domains, so a padlock icon on a phishing page is common. HTTP without the S means traffic is not encrypted and can be read or modified by others on the network, so never enter passwords on HTTP pages.
+
+How to verify a domain
+
+Read the domain slowly, letter by letter. Compare it with the address printed on an official card, statement or the brand's official app. Type the address yourself or use a bookmark. When in doubt, search for the company name and use the official result.
